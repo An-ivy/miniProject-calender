@@ -1,0 +1,106 @@
+<!--pages/checkin/checkin.wxml-->
+<view id="checkin">
+  <!-- 导航 -->
+  <navigator class="navbar">
+    <view class="container">           
+          <text class="nav1">{{now.Weather}}</text>
+          <text class="nav2">室内{{now.Indoortemperature}}</text>
+          <text class="nav2">室外25°</text>
+          <text class="nav2">空调{{now.Airconditioner}}</text>   
+    </view>
+  </navigator>
+
+  <!-- 概述 -->
+  <view id="roomsummary">
+    <!-- 图片 -->
+    <view>
+      <image src="/images/logo_03.gif" id="image"></image>
+    </view>
+    <!-- 图片旁文字 -->
+    <view class="text1">
+      <view id="title">{{now.RoomName}}</view>
+      <view id="tpi">
+        <view class="plusicon">
+          <image src="/images/home_gray.png" id="icon1" class="icon"></image>
+          <image src="/images/phone_gray.png" id="icon2" class="icon"></image>
+          <image src="/images/location_gray.png" id="icon3" class="icon"></image>
+        </view>
+        <view class="texts">
+          <view>{{now.RoomType=="HuiYiShi"?"会议室":""}}</view>
+          <view>{{now.Phone}}</view>
+          <view class="address">{{now.Address}}</view>
+        </view>
+      </view>      
+    </view>
+  </view>
+  <!-- 时间段 -->
+  <view id="time">
+    <view class="text2">
+      <text decode="{{true}}" class="times">{{now.StartDate}}&nbsp;&nbsp;</text>
+      <text decode="{{true}}" class="times">{{now.EndDate}}&nbsp;&nbsp;</text>
+    </view>
+    <!-- <view id="days">距离退房还剩0天</view> -->
+  </view>
+<!-- 备注 -->
+  <view id="remark">
+    <view class="remarks">
+      <label>备注：</label>     
+      <input type="text" placeholder="点击添加备注"></input>
+    </view>
+    <view id="pcover">
+    <!-- 圆形图    -->
+    <view id="pics" bindtap="bindClickCheckin">
+      <view id="pic4" class="pic">
+        <view id="pic3" class="pic">
+          <view id="pic2" class="pic"> 
+            <view id="pic1" class="pic coverbtn" bindtap="scan" id="scan" >
+              <image src="/images/key1.png" id="icon8" class="icon2"></image>
+              <view  class="covertext">扫码开门</view>
+            </view>           
+          </view> 
+        </view>
+        <!-- 按键 -->
+        <cover-view class="coverbtn" id="btn1" hidden="{{hidebtn}}">
+          <cover-image src="/images/share.png" class="icon2" id="icon4"></cover-image>
+          <cover-view id="sharePage" class="covertext">共享</cover-view>
+        </cover-view>
+         <cover-view class="coverbtn" id="btn11" hidden="{{!hidebtn}}">
+          <cover-image src="/images/share1.png" class="icon2" id="icon4"></cover-image>
+          <cover-view id="sharePage" class="covertext" style="color:#bfbfbf">共享</cover-view>
+        </cover-view>
+        <cover-view class="coverbtn" id="btn2">
+          <cover-image src="/images/sms.png" class="icon2" id="icon5"></cover-image>
+          <cover-view id="airPage" class="covertext">空调</cover-view>
+        </cover-view>
+        <!-- <cover-view class="coverbtn" id="btn3">
+          <cover-image src="/images/phone_white.png" class="icon2" id="icon6"></cover-image>
+          <cover-view class="covertext">客服</cover-view>
+        </cover-view> -->
+        <!-- <cover-view class="coverbtn" id="btn4">
+          <cover-image src="/images/home_white.png" class="icon2" id="icon7"></cover-image>
+          <cover-view id="homePage" class="covertext">回家</cover-view>
+        </cover-view> -->
+        <cover-view class="coverbtn" id="btn5">
+          <cover-image src="/images/talk1.png" class="icon2" id="icon8"></cover-image>
+          <cover-view id="content"class="covertext">评价</cover-view>
+        </cover-view>
+        <cover-view class="coverbtn" id="btn6">
+          <cover-image src="/images/leave.png" class="icon2" id="icon9"></cover-image>
+          <cover-view id="checkOut" class="covertext" >退房</cover-view>
+        </cover-view>
+      </view>
+    <!-- 水印 -->
+      <view id="covers">
+        <view class="cover" id="cover1">请务必入住到前台实名登记</view>
+        <view class="cover" id="cover2">请务必入住到前台实名登记</view>
+        <view class="cover" id="cover3">请务必入住到前台实名登记</view>
+        <view class="cover" id="cover4">请务必入住到前台实名登记</view>
+        <view class="cover" id="cover5">请务必入住到前台实名登记</view>
+        <view class="cover" id="cover6">请务必入住到前台实名登记</view>
+        <view class="cover" id="cover7">请务必入住到前台实名登记</view>
+      </view>
+    </view>  
+    </view>  
+  </view>
+</view>
+

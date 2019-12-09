@@ -1,0 +1,49 @@
+<view class='wrap'>
+  <view>
+  <view class="qd" bindtap="qdClickbind">确定</view>
+    <view class='date-show'>
+      {{year}}年{{month}}月     
+    </view>
+  </view>
+  <view class='header'>
+    <view wx:for='{{date}}' class='{{(index == todayIndex) && isTodayWeek ? "weekMark" : ""}}' wx:key="{{index}}">{{item}}
+      <view></view>
+    </view>
+  </view>
+  <view class='date-box'> 
+    <!-- zuorq1 这个是记录当前不是今天的天数的第一天  zuorq2 这个是最后一次  {{item.dateNum<zuot?"active":""}}       {{item.dateNum>=qhrq&&item.dateNum<=zuot11?"nowDay":""}}  item.dateNum== undefined?"":"" 这个是去掉下表为undefined的结果 -->
+     <view wx:for='{{dateArr}}' class='{{(item.dateNum == undefined?"":"" || item.dateNum == qhrq? nowDay :"")}} {{item.dateNum<day?active:""}}  {{item.dateNum == undefined?"":"" || item.dateNum == lset? nowDay :""}}'
+      wx:key="{{index}}" data-date='{{item.isToday}}'>
+      <view class='date-head'>
+          <view catchtap="daybindTo" data-index="{{item.dateNum}}" wx:if="{{ item.isToday == cc }}">
+           <view catchtap="zuoBing" data-index="{{item.dateNum}}" >{{item.dateNum==day?'':item.dateNum}}</view> 
+           <view catchtap="daybindTo" data-index="{{item.dateNum}}" >{{item.dateNum==day?'今天':''}}</view>
+          </view>
+          <view wx:elif="{{item.isToday}}">
+             <view catchtap="zuoBing" data-index="{{item.dateNum}}" >{{item.dateNum}}</view> 
+          </view>
+      </view>
+      <view class='date-weight' >{{item.weight}}</view>
+    </view>
+  </view> 
+</view>  
+<!-- 时间表 -->    
+<view class="time" hidden="{{hide}}">
+  <block wx:for="{{24}}" wx:key="{{index}}">
+    <view  class="contster {{item<=h ? 'color' :''}} {{item<indextime?'color':''}} {{item<INDEX?'color':''}} {{indextime==index?'pink':''}} {{ INDEX==index?'pink':''}} {{item>=time1&& item<= time2?'pink':''}}  {{item>=time12&& item<= time23?'pink':''}} " bindtap="huorOnclick" data-index="{{index}}">{{item}}</view>
+  </block>
+</view>
+
+<!-- 不是当天的时间表 -->
+<view class="time" hidden="{{hideTime}}">
+  <block wx:for="{{24}}" wx:key="{{index}}">
+    <view  class="contster {{item == horstTime? pink : ''}} {{item>=h1Time&&item<=h2Time?pink:''}} {{item<h1Time?color:''}}" bindtap="huorOnclickTime" data-index="{{index}}">{{item}}</view>
+  </block>
+</view>
+  <view class="wrap_box">
+  <view class="timedetail">
+    <view>开始时间:{{year}}/{{month}}/{{qhrq||lset}}/{{horstTime||time1}}</view>
+    <view>结束时间:{{year}}/{{month}}/{{qhrq||lset}}/{{h2Time||time2}}</view>
+  </view>  
+    <view class="roomcss" bindtap="roomClass">重新选择</view> 
+  </view>

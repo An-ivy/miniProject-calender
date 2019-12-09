@@ -1,0 +1,307 @@
+/* pages/checkin/checkin.wxss */
+/* 最大盒子 */
+#checkin{
+  text-align: center;
+  background-color: #f0f0f0;
+}
+/* 导航 */
+.navbar{
+  width: 100%;
+  height: 110rpx;
+  background-color:#fe8b7d;
+}
+/* 导航内容 */
+.container{
+  display: inline;
+  margin: 0 auto;
+  text-align: center;
+}
+/* 天气 */
+.nav1{
+  font-size: 40rpx;
+  color: white;
+  display: inline-block;
+  width: 30%;
+  margin-top: 3%;
+}
+/* 温度 */
+.nav2{
+  font-size: 30rpx;
+  color: white;
+  display: inline-block;
+  width: 20%;
+  margin-top: 5%;
+}
+/* 房间概述 */
+#roomsummary{
+  display: flex;
+  text-align: left;
+  background-color: white;
+  height: 230rpx;
+  margin: 15rpx auto;
+  border-radius:5px;
+  margin-top: 15rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+/* 图片 */
+#image{
+  margin-left: 10%;
+  width: 280rpx;
+  height: 180rpx;
+  display: flex;
+}
+/* 图片旁文字 */
+.text1{
+  margin-left: -3%;
+  margin-top: 0.5%;
+}
+/* 万象城c座标题 */
+#title{
+  font-weight: bold;
+  font-size: 30rpx;
+  width: 400rpx;
+  height: 40rpx;
+  margin-left: 80rpx;
+}
+#tpi{
+  display: flex;
+  flex-basis: row;
+  margin-left: 12%;
+  margin-top: 2%;
+}
+/* 图标 */
+.icon{
+  width: 40rpx;
+  height: 40rpx;
+  display: inline-block;
+  margin-left: -1rpx;
+}
+/* 图标加文字 */
+.plusicon{
+  width: 40rpx;
+  display: flex;
+  flex-direction: column;
+}
+/* 文字 */
+.texts{
+  margin-left: 20rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 25rpx;
+}
+
+/* 时间块 */
+#time{
+  display: flex;
+  font-size: 30rpx;
+  height: 180rpx;
+  margin-top: 3%;
+  background-color: white;
+  align-items: center;
+}
+.text2{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100rpx;
+}
+/* 开始结束时间 */
+.text2 text{
+  display: block;
+  color:#fe8b7d;
+}
+.times{
+  margin-left: 30rpx; 
+}
+.address{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  height: 50rpx;
+  width: 50%;
+}
+/* 距离退房时间 */
+#days{
+  margin-left: 10%;
+  text-align: center;
+  font-size: 26rpx;
+}
+/* 备注块 */
+#remark{
+  margin-top: 3%;
+  text-align: left;
+  font-size: 30rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* 文字 */
+.remarks{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 92%;
+  margin-top: 3%;
+}
+.remarks label{
+  width: 15%;
+  text-align: right;
+}
+input{
+  width: 100%;
+}
+/* 圆形图加水印 */
+#pics{
+  width: 500rpx;
+  height: 600rpx;
+  margin:0 auto; 
+  margin-top: 0;
+  position: relative;
+  border-color: transparent;
+}
+/* 圆形 */
+#pics view{
+  border-radius:50%;
+  border: solid 2rpx black; 
+  border-color: transparent;
+}
+#pic4{ 
+  width: 480rpx;
+  height: 480rpx; 
+  margin: 0.1% auto;
+  background-color: #FFECEC;
+  border-color: transparent;
+}
+#pic3{ 
+  width: 350rpx;
+  height: 350rpx;
+  margin: 13% auto;
+  background-color:#FFD2D2;
+  border-color: transparent;
+}
+#pic2{ 
+  width: 240rpx;
+  height:240rpx; 
+  margin: 15% auto;  
+  background-color: #FFB5B5;
+  border-color: transparent;
+}
+#scan{ 
+  width: 120rpx;
+  height: 120rpx; 
+  margin: 24% auto;
+  /* background-color: #FF9797; */
+  border-color: transparent;
+}
+/* 水印 */
+#pcover{
+  width: 70%;
+  height: 500rpx;
+  overflow: hidden;
+  margin:0 auto; 
+}
+.cover{
+z-index:1;
+display: block;
+padding: 2px 1px;
+font-family:'宋体';
+position: absolute;
+font-size: 30rpx;
+/* font-weight: bold; */
+white-space: nowrap;
+opacity: 0.5;
+color:#C0C0C0;
+}
+#cover1{
+left: 50rpx;
+top: 80rpx;
+}
+#cover2{
+left: -300rpx;
+top: 160rpx;
+}
+#cover3{
+left: 150rpx;
+top: 160rpx;
+}
+#cover4{
+left: -200rpx;
+top: 240rpx;
+}
+#cover5{
+left: 250rpx;
+top: 240rpx;
+}
+#cover6{
+left: -100rpx;
+top: 320rpx;
+}
+#cover7{
+left: 350rpx;
+top: 320rpx;
+}
+/* 按键 */
+.coverbtn{
+  border-radius:50%; 
+  border-color: transparent;
+  background-color: #FFB5B5;
+  width: 100rpx;
+  height: 100rpx;
+  z-index: 99999;
+  position: relative;
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#btn1{
+  margin-top: -98%;
+  margin-left: 40%;
+}
+#btn11{
+  margin-top: -98%;
+  margin-left: 40%;
+}
+#btn2{
+  margin-top: 17%;
+  margin-left: 77.2%; 
+}
+#btn3{
+  margin-top: 9%;
+  margin-left: 2%;  
+}
+#btn4{
+  margin-top: -20%;
+  margin-left: 77.5%;
+}
+/* #btn5{
+  margin-top: 7%;
+  margin-left: 17%;
+} */
+#btn5{
+  margin-top: -21%;
+  margin-left: 2%;
+}
+
+/* #btn6{
+  margin-top: -22%;
+  margin-left: 64%;
+} */
+#btn6{
+  margin-top: 16.2%;
+  margin-left: 39.5%;
+}
+.icon2{
+  width: 40rpx;
+  height: 40rpx;
+  display: inline-block;
+}
+.covertext{
+  font-size: 25rpx;
+  color: white;
+}
+

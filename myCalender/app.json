@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/logs/logs",
+    "pages/kckc/kckc",
+    "pages/list/list",
+    "pages/priceCalendar/priceCalendar"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,46 @@
+<view class='wrap'>
+  <view>
+    <view class="qd" bindtap="Determine">确定</view>
+    <view class='date-show'>
+      <view class='lt-arrow' bindtap='lastMonth'>
+        ＜
+      </view>
+      <!-- {{ _yearMonthDay.Month}} -->
+      {{ nowYearMonth}}
+      <view class='rt-arrow' bindtap='nextMonth'>
+        ＞
+      </view>
+    </view>
+  </view>
+  <view class='header'>
+    <view wx:for='{{date}}' wx:key="{{index}}" class='{{(index == todayIndex) && "isTodayWeek "? "weekMark" : ""}}'>{{item}}
+      <view></view>
+    </view>
+  </view>
+  <view class='date-box'>
+    <view wx:for='{{dateA}}' wx:key="{{index}}" class='{{item.Date < nowDate?active:""}} {{startDate===item.Date?"startActive":" "}} {{endDate===item.Date?"endActive":" "}} {{item.Date>startDate&&item.Date<endDate&&startDate!==" "&&endDate!==" "?"midActive":" "}}'>
+      <view class='date-head'>
+        <!-- <view bindtap="dayClick" data-index="{{item}}">{{item.Number == day?text:item.Number}}</view> -->
+        <view bindtap="chooseDate" data-index="{{index}}" data-Number="{{item.Number}}" data-Date="{{item.Date}}">{{item.Number}}</view>
+      </view>
+      <!-- <view class='date-weight'>{{item.weight}}</view> -->
+    </view>
+  </view>
+</view>
+
+
+<!-- 时间表 -->
+<view class="time">
+  <block wx:for="{{data_schedule}}" wx:key="{{index}}">
+    <view class="contster {{item.Date < nowDateHour?active:''}} {{startDateHour===item.Date?'startActiveTime':''}} {{endDateHour===item.Date?'endActiveTime':''}} {{item.TimeStatus==true?' ':'midActive'}} {{item.Date>startDateHour&&item.Date<endDateHour&&startDateHour!==' '&&endDateHour!==' '?'midActiveTime':' '}}">
+        <view class='date-head'>
+        <!-- <view bindtap="dayClick" data-index="{{item}}">{{item.Number == day?text:item.Number}}</view> -->
+        <view bindtap="chooseHours" data-index="{{index}}" data-HourTime="{{item.HourTime}}" data-TimeStatus="{{item.TimeStatus}}" data-Date="{{item.Date}}">{{item.HourTime}}</view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<!-- 显示开始/结束时间 -->
+<view>开始日期：{{startDate}}-{{start_hourtime_click}}</view>
+<view>开始日期：{{endDate}}-{{end_hourtime_click}}</view>
